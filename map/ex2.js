@@ -41,11 +41,22 @@ Expected OUTPUT for this sample
   ]
 
 */
-
-function getFoodCategories(foods) {
+function isVegetarian(arrayFood) {
+  if (arrayFood.isVegetarian === true) {
+    const food = arrayFood.food + " is suitable for vegetarians";
+    
+ return food;
+}  else {
+  const food = arrayFood.food + " is not suitable for vegetarians";
+  return food;
+ };
 }
 
-
+function getFoodCategories(foods) {
+  const arrayFood = foods.map(isVegetarian);
+  return arrayFood;
+}
 
 // DON'T TOUCH THIS!
 module.exports = getFoodCategories;
+

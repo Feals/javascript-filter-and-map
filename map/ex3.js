@@ -60,11 +60,42 @@ Expected OUTPUT for this sample:
   ]
 
  */
+  let user = {
+    name: "John",
+    age: 30,
+  }
+  
+function goodMovie(arrayMovie) {
+  if (arrayMovie.rating < 60) {
+   const moviesLabel = "rotten";
+   let object = 
+   {label: moviesLabel, 
+    name: arrayMovie.name, 
+    rating: arrayMovie.rating
+   };
+   return object;
 
-function getMoviesFreshness(movies) {
+  }
+
+  else if (arrayMovie.rating >= 60 && arrayMovie.rating <= 75 ) {
+    const moviesLabel = "fresh";
+    let object = {label: moviesLabel, name: arrayMovie.name, rating: arrayMovie.rating};
+   return object;
+
+  }
+
+  else if (arrayMovie.rating > 75) {
+    const moviesLabel = "certified fresh";
+    let object = {label: moviesLabel, name: arrayMovie.name, rating: arrayMovie.rating};
+   return object;
+  }
 }
 
-
+function getMoviesFreshness(movies) {
+  const moviesWithLabel = movies.map(goodMovie);
+  return moviesWithLabel;
+}
 
 // DON'T TOUCH THIS!
 module.exports = getMoviesFreshness;
+
